@@ -9,8 +9,8 @@ jobs:
     - uses: actions/checkout@v1
     - name: Install 5.0 Headers
       run: |
-        apt install linux-headers-5.0.0-37-generic
-        ln -sf /usr/src/linux-headers-5.0.0-37-generic/include/uapi/linux/tls.h /usr/include/linux/
+        sudo apt install linux-headers-5.0.0-37-generic
+        sudo ln -sf /usr/src/linux-headers-5.0.0-37-generic/include/uapi/linux/tls.h /usr/include/linux/
     - name: cmake
       run: |
         mkdir -p build
