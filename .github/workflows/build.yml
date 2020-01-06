@@ -1,0 +1,24 @@
+name: build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+      with:
+        submodules: true
+    - name: Install 5.0 Headers
+      run: |
+        sudo apt install linux-headers-5.0.0-37-generic
+        sudo ln -sf /usr/src/linux-headers-5.0.0-37-generic/include/uapi/linux/tls.h /usr/include/linux/
+    - name: cmake
+      run: |
+        mkdir -p build
+        cd build
+        cmake -DCMAKE_BUILD_TYPE=RELEASE ..
+    - name: make
+      run: make -j $(nproc)
+      working-directory: build

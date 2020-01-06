@@ -1,4 +1,4 @@
-# KTLS Wrapper [![Build Status](https://travis-ci.com/zliuva/ktlswrapper.svg?token=3u2VrXJmVG2X8YDf7p67&branch=master)](https://travis-ci.com/zliuva/ktlswrapper)
+# KTLS Wrapper [![Build Status](https://travis-ci.com/zliuva/ktlswrapper.svg?token=3u2VrXJmVG2X8YDf7p67&branch=master)](https://travis-ci.com/zliuva/ktlswrapper)[![](https://github.com/zliuva/ktlswrapper/workflows/build/badge.svg)](https://github.com/zliuva/ktlswrapper/actions?query=workflow%3Abuild)
 
 A wrapper that enables TLS support (TLS 1.2 with AES 128 GCM) for existing applications without code change.
 
