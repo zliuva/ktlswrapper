@@ -1,0 +1,27 @@
+os: linux
+dist: bionic
+addons:
+  apt:
+    update: true
+    packages:
+    - linux-headers-5.0.0-37-generic
+
+language: c
+compiler: gcc
+
+before_script:
+  - sudo ln -sf /usr/src/linux-headers-5.0.0-37-generic/include/uapi/linux/tls.h /usr/include/linux/
+  - mkdir -p build
+  - cd build
+  - cmake -DCMAKE_BUILD_TYPE=RELEASE ..
+
+script: make -j $(nproc)
+
+deploy:
+  provider: releases
+  token: $GITHUB_TOKEN
+  file: libktlswrapper.so
+  skip_cleanup: true
+  on:
+    tags: true
+

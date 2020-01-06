@@ -1,0 +1,10 @@
+{
+    global:
+        bind;
+        accept;
+        accept4;
+
+    local:
+        *;
+};
+
