@@ -6,7 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout
+      uses: actions/checkout@v1
+      with:
+        submodules: true
     - name: Install 5.0 Headers
       run: |
         sudo apt install linux-headers-5.0.0-37-generic
